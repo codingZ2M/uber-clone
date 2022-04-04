@@ -65,7 +65,7 @@ const RideRequestContainer = tw.div`
    }
 `;
 const OptionContainer = tw.div`
-   flex gap-60 my-10 
+   flex gap-52 sm:gap-60 my-10 
 `;
 const RideBox = tw.div`
     span {

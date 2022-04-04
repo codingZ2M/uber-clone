@@ -6,6 +6,7 @@ import Ride from './components/Ride';
 import{BiRewind} from "react-icons/bi";
 import Link from 'next/link'
 import {auth, provider, signInWithPopup, onAuthStateChanged} from '../firebase/Firebase'
+import HeaderMenu from './components/HeaderMenu'
 
 const RideRequestConfirm = () => {
 
@@ -66,7 +67,7 @@ const RideRequestConfirm = () => {
 
   return (
     <RideConfirmWrapper>
-
+        <HeaderMenu/>
         <GoogleMap
             pickupLocationCoordinates={pickupLocationCoordinates}
             destinationCoordinates={destinationCoordinates}
@@ -94,7 +95,7 @@ const RideConfirmWrapper = tw.div`
     flex flex-col h-screen
 `;
 const BackButtonContainer   = tw.div`
-    flex w-12 h-12 rounded-full bg-white 
+    flex w-12 h-12 rounded-full bg-white mt-10
     absolute top-10 left-10 items-center justify-center
 `;
 const BackButton = tw(BiRewind)`

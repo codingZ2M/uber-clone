@@ -9,12 +9,18 @@ const Ride = ({pickupLocationCoordinates, destinationCoordinates}) => {
       
    // Obtaining pickup coordinates (x & y axis)
    useEffect( ()=> {
+      
+      //https://docs.mapbox.com/api/navigation/directions/
       fetch(`https://api.mapbox.com/directions/v5/mapbox/driving/${pickupLocationCoordinates[0]}, ${pickupLocationCoordinates[1]};${destinationCoordinates[0]}, ${destinationCoordinates[1]}?access_token=pk.eyJ1IjoiY29kaW5nejJtIiwiYSI6ImNsMHQ2MTlqZjBocnUzanF1MzE1Z2ExODgifQ.GcopJAGTMaYggH56UnJYfQ`
       ).then( (response) => response.json())
        .then( data => {
+         try {
           // Considering only route A
           setRideDuration(data.routes[0].duration / 100)
           console.log(data);
+         } catch(error) {
+            console.log(error)
+        }
        })
       
    }, [pickupLocationCoordinates, destinationCoordinates])

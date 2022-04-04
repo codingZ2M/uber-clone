@@ -50,5 +50,5 @@ const GoogleMap = ({pickupLocationCoordinates, destinationCoordinates}) => {
 export default GoogleMap;
 
 const GoogleMapWrapper = tw.div`
-    flex-1 min-w-full pt-96
+    flex-1 min-w-full pt-96 mt-16
 `;
